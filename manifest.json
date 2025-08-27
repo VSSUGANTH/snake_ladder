@@ -1,0 +1,20 @@
+{
+  "name": "Snakes & Ladders Arena",
+  "short_name": "SNL-Arena",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff9f0",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

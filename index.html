@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Snakes & Ladders Arena — PWA</title>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="Snakes & Ladders with music, snake-bite obstacles, power-ups and speed boosts. PWA ready." />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Snakes & Ladders Arena</h1>
+      <div class="controls">
+        <button id="newGame">New Game</button>
+        <button id="rollBtn">Roll Dice</button>
+        <button id="muteBtn">Toggle Music</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="boardWrap">
+        <canvas id="board"></canvas>
+      </section>
+      <aside id="side">
+        <div class="panel">
+          <div>Players: <span id="playersCount">2</span></div>
+          <div>Turn: <span id="turn">1</span></div>
+          <div>Dice: <span id="dice">-</span></div>
+          <div>Score: <span id="moves">0</span></div>
+          <div id="log" class="log">Press New Game to start</div>
+        </div>
+        <div class="panel small">Power-ups legend:
+          <ul>
+            <li>🍀 Extra Move</li>
+            <li>🛡️ Immunity (skip snake)</li>
+            <li>⚡ Speed Boost (double move)</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer><small>Procedural audio & generated icons only — no copyrighted media included.</small></footer>
+  </div>
+
+  <audio id="bgm" loop preload="auto">
+    <source src="assets/bgm.wav" type="audio/wav">
+  </audio>
+
+  <script src="app.js"></script>
+  <script>
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('sw.js').catch(e=>console.warn('SW failed',e));
+    }
+  </script>
+</body>
+</html>
